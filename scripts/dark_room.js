@@ -14,6 +14,7 @@ const darkRoomCode = localStorage.getItem('darkRoomCode');
 const WELCOME_MESSAGE = "Welcome to The Dark Room!"
 
 const messsagesDivElement = document.getElementById("messages");
+const messagesContainerElement = document.getElementById("messagesContainer")
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -44,6 +45,8 @@ onAuthStateChanged(auth, (user) => {
             }
 
             messsagesDivElement.innerHTML = combinedMessages
+
+            messagesContainerElement.scrollTop = messagesContainerElement.scrollHeight
         });
     } else {
         window.location.href = "/the_dark_room/"
@@ -57,7 +60,6 @@ darkRoomCodeDisplayElement.addEventListener("click", function() {
     navigator.clipboard.writeText(darkRoomCode)
 })
 
-const messagesContainerElement = document.getElementById("messagesContainer")
 const messageTextareaElement = document.getElementById("messageTextarea")
 const messageTextareaWrapperElement = document.getElementById("messageTextareaWrapper")
 messageTextareaElement.addEventListener("keyup", function(e) {

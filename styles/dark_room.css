@@ -124,7 +124,7 @@ nav #darkRoomCodeDisplay:hover {
     color: white;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1020px) {
     #messages p {
         width: 25em;
     }
