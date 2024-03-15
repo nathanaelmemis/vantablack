@@ -96,7 +96,7 @@ nav #darkRoomCodeDisplay:hover {
     height: 1em;
     background-color: transparent;
     border: none;
-    width: 62em;
+    width: 55em;
     transition: all .5s ease;
     overflow: auto;
     resize: none;

@@ -11,7 +11,7 @@ const db = getDatabase();
 
 const user = getRedirectResult(auth).currentUser;
 
-let isFocus = true
+let isFocus = false
 
 if (user) {
     window.location.href = "/the_dark_room/dark_room.html"
