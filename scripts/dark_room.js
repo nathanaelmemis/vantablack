@@ -46,7 +46,7 @@ onAuthStateChanged(auth, (user) => {
             messsagesDivElement.innerHTML = combinedMessages
         });
     } else {
-        window.location.href = "/"
+        window.location.href = "/the_dark_room/"
     }
 });
 

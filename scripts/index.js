@@ -14,7 +14,7 @@ const user = getRedirectResult(auth).currentUser;
 let isFocus = true
 
 if (user) {
-    window.location.href = "/dark_room.html"
+    window.location.href = "/the_dark_room/dark_room.html"
 } else {
     if (!isDarkRoomCodeInLocalStorage()) {
         const darkRoomCodeEnterButton = document.getElementById("darkRoomCodeEnterButton")
@@ -53,7 +53,7 @@ function isDarkRoomCodeInLocalStorage() {
         signInWithEmailAndPassword(auth, encryptedDarkRoomCode + '@gmail.com', encryptedDarkRoomCode)
         .then (() => {
             localStorage.setItem('darkRoomCode', darkRoomCode);
-            window.location.href = "/dark_room.html"
+            window.location.href = "/the_dark_room/dark_room.html"
         })
         .catch((error) => {
             localStorage.removeItem('darkRoomCode');
@@ -89,7 +89,7 @@ function handleDarkRoomCodeGiven() {
     .then (() => {
         localStorage.setItem('darkRoomCode', darkRoomCodeInput.value);
 
-        window.location.href = "/dark_room.html"
+        window.location.href = "/the_dark_room/dark_room.html"
     })
     .catch(() => {
         darkRoomCodeInput.style.backgroundColor = "red"
@@ -119,7 +119,7 @@ function handleCreateDarkRoomButtonClick() {
     
             localStorage.setItem('darkRoomCode', darkRoomCode);
     
-            window.location.href = "/dark_room.html";
+            window.location.href = "/the_dark_room/dark_room.html";
         // The only expected error are dark room code collisions
         } catch (error) {
             // reiterate again until no dark room code collision
