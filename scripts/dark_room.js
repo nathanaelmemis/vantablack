@@ -66,11 +66,7 @@ messageTextareaElement.addEventListener("keyup", function(e) {
     if (e.key !== 'Enter' || e.shiftKey) {
         const numLine = messageTextareaElement.value.split('\n').length
 
-        if (numLine > 7) {
-            return
-        }
-
-        messageTextareaElement.style.height = (numLine + (numLine > 1 ? .10 : 0) * numLine) + 'em';
+        messageTextareaElement.style.height = (numLine + ((numLine > 7 ? 7 : numLine) > 1 ? .10 : 0) * numLine) + 'em';
 
         return
     }
