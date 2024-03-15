@@ -1,0 +1,67 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-direction: column;
+}
+
+h1 {
+    color: white;
+    margin: 0 0 .5em 0;
+}
+
+div input {
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 1.5em;
+    transition: all .5s ease;
+    border: 2px solid black;
+}
+
+div button {
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 2em;
+    cursor: pointer;
+    border: 2px solid black;
+    transition: all .5s ease;
+    width: 3.5em;
+    opacity: 0;
+    margin-right: -3.5em;
+    transition: all .5s ease;
+}
+
+
+p {
+    color: white;
+    font-size: 1em;
+}
+
+#createDarkRoomButton {
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 1.5em;
+    cursor: pointer;
+    border: 2px solid black;
+    transition: all .5s ease;
+}
+
+#createDarkRoomButton:hover,
+div button:hover {
+    background-color: black;
+}
+
+input:hover,
+input:focus,
+#createDarkRoomButton:hover,
+div button:hover {
+    border: 2px solid white;
+    outline: none;
+    color: white;
+}

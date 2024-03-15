@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/dark_room.css">
+</head>
+<body>
+    <nav>
+        <p id="destroyDarkRoomButton">Destroy Dark Room</p>
+        <p id="darkRoomCodeDisplay" title="Copy to clipboard">Dark Room Code: </p>
+    </nav>
+    <div class="lowerElementsWrapper">
+        <div id="messagesContainer">
+            <div id="messages"></div>
+        </div>
+        <div class="messageInputContainer">
+            <div id="messageTextareaWrapper">
+                <textarea id="messageTextarea" placeholder="write a message..."></textarea>
+            </div>
+            <button id="messageInputSendButton">Send</button>
+        </div>
+    </div>
+    <script type="module" src="scripts/dark_room.js"></script>
+</body>
+</html>
