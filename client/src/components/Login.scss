@@ -1,0 +1,106 @@
+$mediaQueryMaxWidth: 660px;
+
+.login-form-container {
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+
+    .login-form {
+        text-align: center;
+        position: relative;
+    
+        h1,
+        p {
+            color: white;
+            margin: .5em;
+        }
+    
+        .create-room {
+            padding: .5em 1em;
+            border-radius: .5em;
+            border: 2px solid black;
+            cursor: pointer;
+            margin-left: .5em;
+            transition: all .3s ease;
+
+            &:hover {
+                background-color: rgb(255, 208, 0);
+            }
+        }
+    
+        .input-failed {
+            // animation: red-outline 3s ease;
+            background-color: #8b1c17;
+        }
+    
+        .create-room-settings-toggle {
+            color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: .5em auto;
+            width: 7em;
+            cursor: pointer;
+            background-color: transparent;
+            border: 0;
+    
+            .arrow-down {
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 10px solid gray; /* Change black to your desired color */
+                margin-left: .5em;
+            }
+
+            .arrow-up {
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 10px solid gray; /* Change black to your desired color */
+                margin-left: .5em;
+            }
+        }
+
+        .create-room-settings-container {
+            display: flex;
+            flex-direction: column;
+            transition: all .3s ease;   
+            position: absolute;
+            width: 21em;
+    
+            div {
+                display: flex;
+                align-items: center;
+                margin-bottom: .5em;
+            }
+    
+            span {
+                color: white;
+                margin-right: .5em;
+            }
+    
+            input {
+                padding: .5em;
+                border-radius: .5em;
+                border: 2px solid black;
+                outline: none;
+                background-color: white;
+            }
+        }
+    
+        .show {
+            opacity: 1;
+            margin-top: 0;
+        }
+    
+        .hide {
+            opacity: 0;
+            margin-top: 1em;
+        }
+    }
+
+}
