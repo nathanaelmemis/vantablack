@@ -6,8 +6,8 @@ import DarkRoom from './routes/DarkRoom.jsx';
 function App() {
   return (
     <Routes>
-      <Route path={extendedPath + '/'} element={<Login />} />
-      <Route path={extendedPath + '/dark_room'} element={<DarkRoom />} />
+      <Route path={'/'} element={<Login />} />
+      <Route path={'/dark_room'} element={<DarkRoom />} />
     </Routes>
   );
 }
