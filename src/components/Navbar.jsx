@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { hash } from '../utils';
 import { useEffect, useState } from 'react';
 
-let domain = 'https://m3ow23.github.io/vantablack'
+let domain = 'https://vantablack-server.vercel.app'
 
 if (process.env.NODE_ENV === 'development') {
     domain = 'http://localhost:3000'

@@ -3,10 +3,10 @@ import './Login.scss'
 import axios from 'axios';
 import { useNavigate, Navigate } from 'react-router-dom';
 
-import InteractiveInput from './InteractiveInput'
+import InteractiveInput from '../components/InteractiveInput'
 import { generateDarkRoomCode, hash } from '../utils';
 
-let domain = 'https://m3ow23.github.io/vantablack'
+let domain = 'https://vantablack-server.vercel.app:3000'
 
 if (process.env.NODE_ENV === 'development') {
   domain = 'http://localhost:3000'

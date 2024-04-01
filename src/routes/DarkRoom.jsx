@@ -3,12 +3,12 @@ import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DarkRoom.scss'
 
-import Messages from './Messages';
-import MessageInput from './MessageInput';
-import Navbar from './Navbar';
+import Messages from '../components/Messages';
+import MessageInput from '../components/MessageInput';
+import Navbar from '../components/Navbar';
 import { hash, encrypt } from '../utils';
 
-let domain = 'ws://m3ow23.github.io/vantablack'
+let domain = 'ws://vantablack-server.vercel.app:3000'
 
 if (process.env.NODE_ENV === 'development') {
   domain = 'ws://localhost:3000'
