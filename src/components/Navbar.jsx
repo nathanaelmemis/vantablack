@@ -5,6 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import { hash } from '../utils';
 import { useEffect, useState } from 'react';
 
+let domain = 'http://localhost:3000'
+
+if (process.env.NODE_ENV === 'production') {
+  domain = 'https://m3ow23.github.io/vantablack'
+}
+
 function Navbar({ darkRoomCode, messagesEncrypted, setMessagesEncrypted, timeToDestroy }) {
     const navigate = useNavigate();
     const [autoDestroyRemainingTime, setAutoDestroyRemainingTime] = useState(null)
@@ -12,7 +18,7 @@ function Navbar({ darkRoomCode, messagesEncrypted, setMessagesEncrypted, timeToD
     function handleDestroyDarkRoomButtonClick() {
         localStorage.removeItem('darkRoomCode')
 
-        axios.post('http://localhost:3000/destroy_room', {
+        axios.post(domain + '/destroy_room', {
           code: hash(darkRoomCode, 2)
         })
         .then(() => {

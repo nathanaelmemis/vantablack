@@ -8,6 +8,12 @@ import MessageInput from './MessageInput';
 import Navbar from './Navbar';
 import { hash, encrypt } from '../utils';
 
+let domain = 'ws://localhost:3000'
+
+if (process.env.NODE_ENV === 'production') {
+  domain = 'ws://m3ow23.github.io/vantablack'
+}
+
 function DarkRoom() {
   const [messages, setMessages] = useState([]);
   const [messageInputValue, setMessageInputValue] = useState('');
@@ -19,7 +25,7 @@ function DarkRoom() {
   const socket = useRef(null);
 
   useEffect(() => {
-    socket.current = new WebSocket('ws://localhost:3000/socket');
+    socket.current = new WebSocket(domain + '/socket');
 
     // Event listener for when the WebSocket connection is opened
     socket.current.onopen = () => {

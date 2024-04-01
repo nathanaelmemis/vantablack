@@ -6,6 +6,12 @@ import { useNavigate, Navigate } from 'react-router-dom';
 import InteractiveInput from './InteractiveInput'
 import { generateDarkRoomCode, hash } from '../utils';
 
+let domain = 'http://localhost:3000'
+
+if (process.env.NODE_ENV === 'production') {
+  domain = 'https://m3ow23.github.io/vantablack'
+}
+
 function Login() {
     const [code, setCode] = useState('')
     const [isFailedLogin, setIsFailedLogin] = useState('')
@@ -19,7 +25,7 @@ function Login() {
 
         // console.log('hashedCode:', hash(code, 2))
 
-        axios.post('http://localhost:3000/login', {
+        axios.post(domain + '/login', {
           code: hash(code, 2)
         })
         .then(() => {
@@ -45,7 +51,7 @@ function Login() {
 
       async function isDarkRoomCodeValid() {
         try {
-          const response = await axios.post('http://localhost:3000/create_room', {
+          const response = await axios.post(domain + '/create_room', {
             code: hash(darkRoomCode, 2),
             inactiveDaysLimit: inactiveDaysLimit,
             autoDestroyTimer: autoDestroyTimer
