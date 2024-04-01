@@ -125,7 +125,7 @@ function Login() {
       localStorage.getItem('darkRoomCode') ? <Navigate to='/dark_room' /> :
       <div className='login-form-container'>
         <form className='login-form' onSubmit={handleLogin}>
-          <h1>The Dark Room</h1>
+          <h1>Vantablack</h1>
           <InteractiveInput code={code} setCode={setCode} isFailedLogin={isFailedLogin}/>
           <p>or</p>
           <button className='create-room' onClick={handleCreateRoom}>Create Dark Room</button>

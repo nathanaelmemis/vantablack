@@ -232,3 +232,4 @@ async function destroyExpiredDarkRooms() {
 }
 
 setInterval(destroyExpiredDarkRooms, 1000)
+
