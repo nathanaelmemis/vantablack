@@ -8,7 +8,7 @@ import MessageInput from '../components/MessageInput';
 import Navbar from '../components/Navbar';
 import { hash, encrypt } from '../utils';
 
-let domain = 'ws://vantablack-server.vercel.app:3000'
+let domain = 'ws://vantablack-server.vercel.app'
 
 if (process.env.NODE_ENV === 'development') {
   domain = 'ws://localhost:3000'
