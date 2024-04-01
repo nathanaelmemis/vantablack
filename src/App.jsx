@@ -3,12 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './components/Login.jsx';
 import DarkRoom from './components/DarkRoom.jsx';
 
-let extendedPath = ''
+let extendedPath = '/vantablack'
 
-console.log(process.env.NODE_ENV)
-
-if (process.env.NODE_ENV === 'production') {
-  extendedPath = '/vantablack'
+if (process.env.NODE_ENV === 'development') {
+  extendedPath = ''
 }
 
 function App() {

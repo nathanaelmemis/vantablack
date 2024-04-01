@@ -8,10 +8,10 @@ import MessageInput from './MessageInput';
 import Navbar from './Navbar';
 import { hash, encrypt } from '../utils';
 
-let domain = 'ws://localhost:3000'
+let domain = 'ws://m3ow23.github.io/vantablack'
 
-if (process.env.NODE_ENV === 'production') {
-  domain = 'ws://m3ow23.github.io/vantablack'
+if (process.env.NODE_ENV === 'development') {
+  domain = 'ws://localhost:3000'
 }
 
 function DarkRoom() {

@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { hash } from '../utils';
 import { useEffect, useState } from 'react';
 
-let domain = 'http://localhost:3000'
+let domain = 'https://m3ow23.github.io/vantablack'
 
-if (process.env.NODE_ENV === 'production') {
-  domain = 'https://m3ow23.github.io/vantablack'
+if (process.env.NODE_ENV === 'development') {
+    domain = 'http://localhost:3000'
 }
 
 function Navbar({ darkRoomCode, messagesEncrypted, setMessagesEncrypted, timeToDestroy }) {

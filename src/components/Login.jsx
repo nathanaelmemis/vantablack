@@ -6,10 +6,10 @@ import { useNavigate, Navigate } from 'react-router-dom';
 import InteractiveInput from './InteractiveInput'
 import { generateDarkRoomCode, hash } from '../utils';
 
-let domain = 'http://localhost:3000'
+let domain = 'https://m3ow23.github.io/vantablack'
 
-if (process.env.NODE_ENV === 'production') {
-  domain = 'https://m3ow23.github.io/vantablack'
+if (process.env.NODE_ENV === 'development') {
+  domain = 'http://localhost:3000'
 }
 
 function Login() {
