@@ -5,8 +5,9 @@ import DarkRoom from './components/DarkRoom.jsx';
 
 let extendedPath = ''
 
+console.log(process.env.NODE_ENV)
+
 if (process.env.NODE_ENV === 'production') {
-  console.log(process.env.NODE_ENV)
   extendedPath = '/vantablack'
 }
 
@@ -14,8 +15,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={extendedPath +"/"} element={<Login />} />
-        <Route path={extendedPath + "/dark_room"} element={<DarkRoom />} />
+        <Route path={extendedPath + '/'} element={<Login />} />
+        <Route path={extendedPath + '/dark_room'} element={<DarkRoom />} />
       </Routes>
     </BrowserRouter>
   );
