@@ -10,7 +10,7 @@ async function initializeFirebase() {
     let firebaseConfig = null;
 
     if (process.env.NODE_ENV === 'production') {
-        firebaseConfig = secrets.FIREBASE_CONFIG;
+        firebaseConfig = secrets.REACT_APP_FIREBASE_CONFIG;
     } else {
         const module = await import("./firebaseConfig");
         firebaseConfig = module.default;
