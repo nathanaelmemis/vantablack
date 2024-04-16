@@ -18,6 +18,7 @@ jobs:
           npm run-script build
         env: 
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+          
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
