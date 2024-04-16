@@ -1,23 +1,31 @@
 {
-  "name": "the_dark_room",
+  "name": "vantablack",
   "private": true,
-  "version": "2.0.0",
+  "version": "3.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=./",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/roboto": "^5.0.12",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "axios": "^1.6.8",
     "crypto-js": "^4.2.0",
+    "firebase": "^10.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
-    "sass": "^1.72.0"
+    "sass": "^1.72.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",

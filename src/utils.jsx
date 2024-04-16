@@ -31,4 +31,21 @@ function decrypt(encryptedText, key) {
     return CryptoJS.AES.decrypt(encryptedText, key).toString(CryptoJS.enc.Utf8)
 }
 
-export { generateDarkRoomCode, hash, encrypt, decrypt }
+function parseMillisecondsToTime(miliseconds) {
+    let hours = Math.floor(miliseconds / 3600000);
+    miliseconds -= (hours * 3600000);
+    let mins = Math.floor(miliseconds / 60000);
+    miliseconds -= (mins * 60000);
+    let secs = Math.floor(miliseconds / 1000);
+
+    // Pad hours, minutes, and seconds with leading zeros
+    hours = String(hours).padStart(2, '0');
+    mins = String(mins).padStart(2, '0');
+    secs = String(secs).padStart(2, '0');
+
+    // console.log(miliseconds, hours, mins, secs)
+
+    return `${hours}:${mins}:${secs}`;
+}
+
+export { generateDarkRoomCode, hash, encrypt, decrypt, parseMillisecondsToTime }
