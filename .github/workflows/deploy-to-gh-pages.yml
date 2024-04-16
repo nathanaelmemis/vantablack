@@ -12,7 +12,8 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          echo ${{ secrets.DEV_SERVER_URL_FROM_ENVIRONMENT_SECRETS }}
+          echo "test"
+          echo ${{ secrets.FIREBASE_CONFIG }}
           npm install
           npm run-script build
         env: 
