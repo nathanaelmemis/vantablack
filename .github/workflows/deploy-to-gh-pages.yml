@@ -13,7 +13,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          echo $FIREBASE_CONFIG
+          echo "$FIREBASE_CONFIG"
           npm install
           npm run build
 

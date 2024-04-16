@@ -5,6 +5,7 @@ import { getAuth } from "firebase/auth";
 console.log(process.env.NODE_ENV, process.env.FIREBASE_CONFIG)
 console.log(process.env)
 
+
 async function initializeFirebase() {
     let firebaseConfig = null;
 
