@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 import './Login.scss'
 import axios from 'axios';
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Container, TextField, Typography, Button, Tabs, Tab, Box, Snackbar, Alert } from '@mui/material'
 import PropTypes from 'prop-types';
 
-import InteractiveInput from '../components/InteractiveInput'
 import { generateDarkRoomCode, hash } from '../utils';
 
 

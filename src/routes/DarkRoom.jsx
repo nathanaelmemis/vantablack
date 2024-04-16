@@ -2,7 +2,7 @@ import { signInWithCustomToken } from "firebase/auth";
 import { ref, onValue } from "firebase/database";
 
 import { Navigate } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DarkRoom.scss'
 
@@ -10,11 +10,7 @@ import axios from 'axios';
 
 import { database as db, auth } from '../firebase'
 
-import Messages from '../components/Messages';
-import MessageInput from '../components/MessageInput';
-import Navbar from '../components/Navbar';
-
-import { Container, IconButton, Typography, Button, Tabs, Tab, Box, Snackbar, Alert } from '@mui/material'
+import { Container, IconButton, Typography, Button, Box, Snackbar, Alert } from '@mui/material'
 import { LockOpen, Lock, ContentCopy, Timer, Send, Delete } from '@mui/icons-material';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 
