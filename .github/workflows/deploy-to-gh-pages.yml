@@ -1,8 +1,6 @@
 name: Build and Deploy
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -17,12 +15,11 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          npm run-script builds
+          npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: dist
 
