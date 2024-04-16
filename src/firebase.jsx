@@ -2,11 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
+console.log(process.env.NODE_ENV)
+console.log(secrets.FIREBASE_CONFIG)
+
+
 async function initializeFirebase() {
     let firebaseConfig = null;
 
     if (process.env.NODE_ENV === 'production') {
-        firebaseConfig = process.env.FIREBASE_CONFIG;
+        firebaseConfig = secrets.FIREBASE_CONFIG;
     } else {
         const module = await import("./firebaseConfig");
         firebaseConfig = module.default;
