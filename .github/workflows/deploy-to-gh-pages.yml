@@ -12,13 +12,11 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          echo "test"
-          echo ${{ secrets.FIREBASE_CONFIG }}
           npm install
           npm run-script build
         env: 
-          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
-          
+          REACT_APP_FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
