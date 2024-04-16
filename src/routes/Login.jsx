@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 
 import { generateDarkRoomCode, hash } from '../utils';
 
-
 let domain = 'https://vantablack-server.vercel.app'
 
 if (process.env.NODE_ENV === 'development') {
