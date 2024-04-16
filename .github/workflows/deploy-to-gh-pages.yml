@@ -1,20 +1,23 @@
 name: Build and Deploy
-on: [push] # defaults to master
+on:
+  push:
+    branches:
+      - master
 permissions:
   contents: write
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
 
       - name: Install and Build 🔧
         run: |
           npm install
           npm run-script build
         env: 
-          FIREBASE_CONFIGS: ${{ secrets.FIREBASE_CONFIG}}
+          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
