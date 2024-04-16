@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
-console.log(process.env.NODE_ENV, process.env.FIREBASE_CONFIG)
+console.log('env:', process.env.NODE_ENV, process.env.FIREBASE_CONFIG)
 console.log(process.env)
 
 
