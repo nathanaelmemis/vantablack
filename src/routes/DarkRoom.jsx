@@ -47,6 +47,7 @@ function DarkRoom() {
         const messagesRef = ref(db, 'dark_rooms/' + hash(darkRoomCredentials.darkRoomCode, 2));
         onValue(messagesRef, (snapshot) => {
           if(snapshot.val() === null) {
+            handleDestroyDarkRoomButtonClick()
             return
           }
           

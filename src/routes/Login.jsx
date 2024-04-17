@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './Login.scss'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +8,6 @@ import PropTypes from 'prop-types';
 import { generateDarkRoomCode, hash } from '../utils';
 
 let domain = 'https://vantablack-server.vercel.app'
-
 if (process.env.NODE_ENV === 'development') {
   domain = 'http://localhost:3000'
 }
