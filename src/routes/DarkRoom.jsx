@@ -42,7 +42,9 @@ function DarkRoom() {
       try {
         await signInWithCustomToken(auth, darkRoomCredentials.authToken)
 
-        setIdToken(await auth.currentUser.getIdToken(true))
+        const idTokenTemp = await auth.currentUser.getIdToken(true)
+
+        setIdToken(idTokenTemp)
 
         const messagesRef = ref(db, 'dark_rooms/' + hash(darkRoomCredentials.darkRoomCode, 2));
         onValue(messagesRef, (snapshot) => {
