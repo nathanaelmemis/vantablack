@@ -36,6 +36,12 @@ function DarkRoom() {
   const darkRoomCredentials = JSON.parse(localStorage.getItem('darkRoomCredentials'))
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!darkRoomCredentials) {
+      navigate('/')
+    }
+  })
+
   // firebase data fetching
   useEffect(() => {
     async function fetchData() {
@@ -220,7 +226,6 @@ function DarkRoom() {
   }
 
   return (
-    darkRoomCredentials == null ? <Navigate to='/' /> :
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh' }}>
         <Box width='100%' margin='1em' display='flex' justifyContent='space-between'>
           <Button variant='outlined' color='error' sx={{ mx: '1em', display: { xs: 'none', sm: 'flex'} }} onClick={handleDestroyDarkRoomButtonClick} startIcon={<Delete />}>Destroy</Button>
