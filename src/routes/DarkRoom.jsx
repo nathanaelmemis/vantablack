@@ -42,9 +42,7 @@ function DarkRoom() {
       try {
         await signInWithCustomToken(auth, darkRoomCredentials.authToken)
 
-        const idTokenTemp = await auth.currentUser.getIdToken(true)
-
-        setIdToken(idTokenTemp)
+        setIdToken(await auth.currentUser.getIdToken(true))
 
         const messagesRef = ref(db, 'dark_rooms/' + hash(darkRoomCredentials.darkRoomCode, 2));
         onValue(messagesRef, (snapshot) => {
@@ -85,6 +83,7 @@ function DarkRoom() {
         autoDestroyTimerElement.textContent = parseMillisecondsToTime(autoDestroyTimer - Date.now())
         if (autoDestroyTimer - Date.now() < 1000) {
           handleDestroyDarkRoomButtonClick()
+          clearInterval(intervalId);
         }
       }, 1000)
     }
@@ -143,6 +142,8 @@ function DarkRoom() {
 
   function handleDestroyDarkRoomButtonClick() {
     localStorage.removeItem('darkRoomCredentials')
+
+    console.log(idToken)
 
     axios.post(domain + '/destroy_room', {
       idToken: idToken
