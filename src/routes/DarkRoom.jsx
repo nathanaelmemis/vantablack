@@ -185,7 +185,7 @@ function DarkRoom() {
 
   // messages rendering
   let renderedMessages = []
-  if (messages != null && darkRoomCredentials.darkRoomCode) {
+  if (messages != null && darkRoomCredentials) {
     Object.entries(messages).forEach(([key, value]) => {
       if (isMessagesEncrypted) {
         renderedMessages.push(
