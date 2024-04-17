@@ -88,7 +88,10 @@ function DarkRoom() {
       intervalId = setInterval(() => {
         autoDestroyTimerElement.textContent = parseMillisecondsToTime(autoDestroyTimer - Date.now())
         if (autoDestroyTimer - Date.now() < 1000) {
-          handleDestroyDarkRoomButtonClick()
+          localStorage.removeItem('darkRoomCredentials')
+          auth.signOut()
+          navigate('/')
+
           clearInterval(intervalId);
         }
       }, 1000)
@@ -148,8 +151,6 @@ function DarkRoom() {
 
   function handleDestroyDarkRoomButtonClick() {
     localStorage.removeItem('darkRoomCredentials')
-
-    console.log(idToken)
 
     axios.post(domain + '/destroy_room', {
       idToken: idToken
