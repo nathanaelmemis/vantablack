@@ -90,9 +90,7 @@ function DarkRoom() {
       intervalId = setInterval(() => {
         autoDestroyTimerElement.textContent = parseMillisecondsToTime(autoDestroyTimer - Date.now())
         if (autoDestroyTimer - Date.now() < 1000) {
-          localStorage.removeItem('darkRoomCredentials')
-          auth.signOut()
-          navigate('/')
+          handleDestroyDarkRoomButtonClick()
 
           clearInterval(intervalId);
         }
