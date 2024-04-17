@@ -36,11 +36,9 @@ function DarkRoom() {
   const darkRoomCredentials = JSON.parse(localStorage.getItem('darkRoomCredentials'))
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!darkRoomCredentials) {
-      navigate('/')
-    }
-  }, [])
+  if (!darkRoomCredentials) {
+    navigate('/')
+  }
 
   // firebase data fetching
   useEffect(() => {
@@ -76,7 +74,9 @@ function DarkRoom() {
         navigate('/')
       }
     }
-    fetchData()
+    if (darkRoomCredentials) {
+      fetchData()
+    }
   }, [])
 
   useEffect(() => {
