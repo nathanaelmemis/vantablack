@@ -4,4 +4,4 @@ Vantablack is a simple encrypted messaging web app. It employs end-to-end encryp
 
 Vantablack utilizes Sha256 for hashing and AES for encryption. 
 
-Web App Link: [Vantablack](https://m3ow23.github.io/vantablack/)
+Web App Link: [Vantablack](https://nathanaelmemis.github.io/vantablack/)
