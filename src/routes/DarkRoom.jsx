@@ -1,7 +1,6 @@
 import { signInWithCustomToken } from "firebase/auth";
 import { ref, onValue } from "firebase/database";
 
-import { Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DarkRoom.scss'
@@ -21,8 +20,6 @@ let domain = 'https://vantablack-server.vercel.app'
 if (process.env.NODE_ENV === 'development') {
     domain = 'http://localhost:3000'
 }
-
-// const test = ['meow', 'ming', 'mow', 'meeeew', 'meow', 'ming', 'mow', 'meeeew', 'meow', 'ming', 'mow', 'meeeew', 'meow', 'ming', 'mow', 'meeeew', 'meow', 'ming', 'mow', 'meeeew',]
 
 function DarkRoom() {
     const [messages, updateMessages] = useState([]);
@@ -236,18 +233,22 @@ function DarkRoom() {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh' }}>
             <Box width='100%' margin='1em' display='flex' justifyContent='space-between'>
+                <Box 
+                    display='flex'
+                    alignItems='center'>
 
-                {/* Destroy Button */}
-                <Button variant='outlined' color='error' sx={{ mx: '1em', display: { xs: 'none', sm: 'flex' } }} onClick={handleDestroyDarkRoomButtonClick} startIcon={<Delete />}>Destroy</Button>
-                <IconButton color='error' sx={{ mx: '.25em', display: { xs: 'block', sm: 'none' } }} onClick={handleDestroyDarkRoomButtonClick}>
-                    <Delete />
-                </IconButton>
+                    {/* Destroy Button */}
+                    <Button variant='outlined' color='error' sx={{ mx: '1em', display: { xs: 'none', sm: 'flex' } }} onClick={handleDestroyDarkRoomButtonClick} startIcon={<Delete />}>Destroy</Button>
+                    <IconButton color='error' sx={{ mx: '.25em', display: { xs: 'block', sm: 'none' } }} onClick={handleDestroyDarkRoomButtonClick}>
+                        <Delete />
+                    </IconButton>
 
-                {/* Logout Button */}
-                <Button variant='outlined' color='error' sx={{ mx: '1em', display: { xs: 'none', sm: 'flex' } }} onClick={handleLogoutButtonClick} startIcon={<Logout />}>Logout</Button>
-                <IconButton color='error' sx={{ mx: '.25em', display: { xs: 'block', sm: 'none' } }} onClick={handleLogoutButtonClick}>
-                    <Delete />
-                </IconButton>
+                    {/* Logout Button */}
+                    <Button variant='outlined' color='error' sx={{ display: { xs: 'none', sm: 'flex' } }} onClick={handleLogoutButtonClick} startIcon={<Logout />}>Logout</Button>
+                    <IconButton color='error' sx={{ mx: '.25em', display: { xs: 'block', sm: 'none' } }} onClick={handleLogoutButtonClick}>
+                        <Logout />
+                    </IconButton>
+                </Box>
 
                 <Box display='flex' alignItems='center'>
                     {!autoDestroyTimer ? '' :
