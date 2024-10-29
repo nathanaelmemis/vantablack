@@ -9,7 +9,6 @@ Vantablack is an anonymized encrypted messaging web app. It utilizes Sha256 for 
 - End-to-end encryption.
 - Realtime messaging.
 
-<<<<<<< HEAD
 ## Tech Stack
 - **Frontend:** React.js
 - **Backend:** Node.js, Express.js
@@ -50,6 +49,3 @@ To run this project locally, follow these steps:
     ```
     npm run dev
     ```
-=======
-Web App Link: [Vantablack](https://nathanaelmemis.github.io/vantablack/)
->>>>>>> b0c39d1d010099c5935f229dae58d3f547939523
