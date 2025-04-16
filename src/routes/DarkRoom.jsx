@@ -203,7 +203,7 @@ function DarkRoom() {
                             borderRadius: '3px',
                             mb: '.5em',
                             cursor: 'pointer',
-                            whiteSpace: 'pre-line',
+                            whiteSpace: 'break-spaces',
                             wordWrap: 'break-word',
                             ":hover": { backgroundColor: 'rgb(40, 40, 40)' }
                         }}>
@@ -220,7 +220,7 @@ function DarkRoom() {
                             padding: '.5em',
                             borderRadius: '3px',
                             mb: '.5em',
-                            whiteSpace: 'pre-line',
+                            whiteSpace: 'break-spaces',
                             wordWrap: 'break-word',
                         }}>
                         <Typography color='primary'>{decrypt(value, hash(darkRoomCredentials.darkRoomCode))}</Typography>
